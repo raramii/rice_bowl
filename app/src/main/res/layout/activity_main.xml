@@ -6,74 +6,116 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/logo"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="50dp"
-            android:maxWidth="200dp"
-            android:maxHeight="200dp"
-            tools:srcCompat="@tools:sample/avatars" />
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:navigationIcon="@android:drawable/ic_menu_close_clear_cancel"
+            android:id="@+id/app_toolbar"/>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:maxWidth="200dp"
+                android:maxHeight="200dp"
+                android:src="@drawable/main_logo2" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="안녕하세요."
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="일인분입니다."
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="회원 서비스 이용을 위해 로그인 해주세요."
+                android:textSize="15dp" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="30dp"
             android:layout_marginEnd="15dp"
             android:layout_marginRight="15dp"
             android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/email"
+                android:id="@+id/inputEmail"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="이메일"
-                app:boxStrokeColor="@color/green"
-                app:hintTextColor="@color/green"
+                app:boxStrokeColor="@color/colorAccent"
                 app:boxStrokeErrorColor="@color/red"
                 app:errorEnabled="true"
-
-
-
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                app:hintTextColor="@color/colorAccent">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:boxStrokeColor="@color/green"
                     android:inputType="textEmailAddress"
-                    />
+                    app:boxStrokeColor="@color/colorAccent" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/pswd"
+                android:id="@+id/inputPw"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="비밀번호"
-                app:boxStrokeColor="@color/green"
-                app:hintTextColor="@color/green"
+                app:boxStrokeColor="@color/colorAccent"
                 app:boxStrokeErrorColor="@color/red"
                 app:errorEnabled="true"
-
-
-
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                app:hintTextColor="@color/colorAccent">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_pass"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:boxStrokeColor="@color/green"
                     android:inputType="textPassword"
-                    />
+                    app:boxStrokeColor="@color/colorAccent" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -81,7 +123,40 @@
                 android:id="@+id/btn_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="로그인" />
+                android:text="로그인"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="OR"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/kakao_login_large_wide"
+                android:visibility="gone">
+
+            </ImageView>
+            <Button
+                android:id="@+id/logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="로그아웃"
+                android:visibility="gone"/>
+
+
+<!--            <com.kakao.usermgmt.LoginButton-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent">-->
+<!--            </com.kakao.usermgmt.LoginButton>-->
+
+
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -91,26 +166,30 @@
 
                 <Button
                     android:id="@+id/btn_findEmail"
+                    style="?android:borderlessButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginRight="20dp"
                     android:layout_weight="1"
-                    android:text="이메일찾기" />
+                    android:text="이메일찾기"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="|"
+                    android:textColor="#000000" />
 
                 <Button
-                    android:id="@+id/btn_findPswd"
+                    android:id="@+id/btn_findPw"
+                    style="?android:borderlessButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="비밀번호찾기" />
+                    android:text="비밀번호찾기"
+                    android:textColor="#000000" />
 
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -122,22 +201,20 @@
                     android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginRight="20dp"
                     android:layout_weight="1"
                     android:gravity="center_horizontal"
                     android:text="아직회원이아니세요?" />
 
                 <Button
                     android:id="@+id/btn_join"
+                    style="?android:borderlessButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="일인분 식구 되기" />
+                    android:text="일인분 식구 되기"
+                    android:textColor="@color/colorPrimary" />
             </LinearLayout>
 
         </LinearLayout>
-
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

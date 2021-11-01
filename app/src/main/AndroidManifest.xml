@@ -2,34 +2,60 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.techtown.test">
 
+    <uses-permission
+        android:name="org.apache.http.legacy"
+        android:required="false" /> <!-- 인터넷 사용 권한 설정 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- sql 연동 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name=".KakaoApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_main"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Login">
+        android:theme="@style/Theme.Login"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".FindPswdActivity2"></activity>
+        <activity android:name=".FindEmailActivity2" />
+        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".Main2Activity" /> <!-- 카카오 로그인 -->
+        <activity android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <!-- Redirect URI: "kakao{NATIVE_APP_KEY}://oauth" -->
+                <data
+                    android:host="oauth"
+                    android:scheme="kakao63652f1e6b271d970b65f2b2103529e7" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="@string/kakaoApi" />
+        <!--
+            'null' 오류 때문에 주석
+                <meta-data
+                    android:name="com.google.android.actions" />
+        -->
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            android:theme="@style/AppTheme.NoActionBar"
         </activity>
-
-        <activity android:name=".MenuActivity">
-        </activity>
-
-        <activity android:name=".FindEmailActivity">
-        </activity>
-
-        <activity android:name=".FindPswdActivity">
-        </activity>
-
-        <activity android:name=".JoinActivity">
-        </activity>
-
-
+        <activity android:name=".MenuActivity" />
+        <activity android:name=".FindEmailActivity" />
+        <activity android:name=".FindPswdActivity" />
+        <activity android:name=".WebViewActivity" />
     </application>
 
 </manifest>

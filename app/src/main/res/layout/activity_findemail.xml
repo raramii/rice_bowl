@@ -1,53 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginStart="15dp"
-    android:layout_marginLeft="15dp"
-    android:layout_marginTop="50dp"
-    android:layout_marginEnd="15dp"
-    android:layout_marginRight="15dp"
     android:orientation="vertical">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textField"
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="?attr/actionModeCloseDrawable"
+            app:title="이메일 찾기"
+            app:subtitleCentered="true"/>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:boxBackgroundColor="@color/white"
-        android:hint="이름을 입력해주세요"
-        >
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="vertical">
 
-        <com.google.android.material.textfield.TextInputEditText
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/usernameInput"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
+            android:hint="이름을 입력해주세요"
+            app:boxStrokeErrorColor="@color/red"
+            app:errorEnabled="true">
 
-            />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/inputName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/phone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:boxBackgroundColor="@color/white"
-        android:hint="휴대폰 번호를 입력해주세요"
-        >
-
-        <com.google.android.material.textfield.TextInputEditText
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/userphoneInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
+            android:hint="휴대폰번호를 입력해주세요"
+            app:boxStrokeErrorColor="@color/red"
+            app:errorEnabled="true"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-            />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/inputNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="확인" />
+        <Button
+            android:id="@+id/btn_y"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="확인" />
+
+    </LinearLayout>
 
 </LinearLayout>

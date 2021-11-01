@@ -8,6 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="red">#d32f2f</color>
-    <color name="green">#4caf50</color>
-    <color name="main">#f18c1a</color>
+    <color name="colorAccent">#f18c1a</color>
+    <color name="colorPrimary">#f18c1a</color>
+    <color name="colorPrimarydark">#d1750d</color>
+    <color name="colorGray">#8C8C8C</color>
 </resources>
