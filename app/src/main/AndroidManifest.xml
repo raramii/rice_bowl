@@ -18,9 +18,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Login"
         android:usesCleartextTraffic="true">
-        <activity android:name=".FindPswdActivity2"></activity>
+        <activity android:name=".MapActivity"></activity>
+        <activity android:name=".SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            android:theme="@style/SplashTheme
+        </activity>
+        <activity android:name=".FindPswdActivity2" />
         <activity android:name=".FindEmailActivity2" />
-        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".RegisterActivity" />
         <activity android:name=".Main2Activity" /> <!-- 카카오 로그인 -->
         <activity android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity">
             <intent-filter>
@@ -45,11 +54,6 @@
                     android:name="com.google.android.actions" />
         -->
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
             android:theme="@style/AppTheme.NoActionBar"
         </activity>
         <activity android:name=".MenuActivity" />

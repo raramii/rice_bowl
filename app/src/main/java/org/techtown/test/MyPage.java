@@ -41,6 +41,12 @@ public class MyPage extends Fragment {
         });
 
 
+        // 데이터베이스에서 닉네임 정보 불러오기
+
+
+
+
+
         return view;
     }
 }
