@@ -1,0 +1,1 @@
+We have developed an application that allows users to search for restaurants. By connecting to GPS, it retrieves the current location to find nearby restaurants. Users can leave comments about the restaurants and save their favorite ones using the bookmark feature to store information about their preferred dining spots.
